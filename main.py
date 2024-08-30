@@ -39,9 +39,6 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan=lifespan)
 
-# add /api as prefix to all routes
-
-
 @app.get("/")
 async def test():
     return {"message": "Hello World"}

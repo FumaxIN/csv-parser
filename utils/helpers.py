@@ -25,7 +25,7 @@ async def compress_image_from_url(url: str):
 
                     compressed_image_io = BytesIO()
                     compressed_image.save(compressed_image_io, format=image.format)
-                    compressed_image_io.seek(0)  # Reset the file pointer to the beginning
+                    compressed_image_io.seek(0)
                     return compressed_image_io
                 else:
                     raise Exception(f"Failed to fetch image from {url}")
@@ -34,7 +34,6 @@ async def compress_image_from_url(url: str):
 
 
 async def process_product(product_id: str, webhook_url: str = None):
-    # Read the product from the database
     product = await read_document("products", product_id)
     input_image_urls = product.get("input_image_urls")
     output_image_urls = []
@@ -49,7 +48,6 @@ async def process_product(product_id: str, webhook_url: str = None):
         if not value:
             raise ValueError(f"Missing required environment variable: {field}")
         if field == "private_key":
-            # Handle private key separately
             value = value.replace("\\n", "\n")
         credentials_dict[field] = value
 
