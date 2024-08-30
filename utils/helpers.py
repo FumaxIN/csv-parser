@@ -28,7 +28,7 @@ async def compress_image_from_url(url: str):
                     compressed_image_io.seek(0)
                     return compressed_image_io
                 else:
-                    raise Exception(f"Failed to fetch image from {url}")
+                    return None
     except:
         return None
 
