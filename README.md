@@ -28,7 +28,7 @@ source venv/bin/activate
   pip install -r requirements.txt
 ```
 
-* Environment variables
+* Paste Environment variables in vend/bin/activate or .env file (Ping for private keys)
 ```bash
 export type="service_account"
 export project_id="csv-parser-434011"
