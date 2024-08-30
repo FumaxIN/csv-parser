@@ -7,6 +7,9 @@ Backend system for uploading CSV files, extracting information, processing data 
 * Google Cloud Storage integration for storing images
 * Utilized background tasks for processing data
 
+### Design
+![test1](https://github.com/user-attachments/assets/57f015a8-4db5-4b93-97e6-b8a29bc542de)
+
 
 ## Clone
 
