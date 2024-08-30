@@ -27,12 +27,16 @@ async def upload_csv(request: Request,
                      webhook_url: Optional[str] = Form(None)):
     try:
         csv_upload = CSVupload()
-        csv_upload_doc = await create_document("csv_uploads", jsonable_encoder(csv_upload))
-        csv_upload_id = csv_upload_doc['_id']
 
         contents = await csv_file.read()
         csv_content = contents.decode('utf-8')
         csv_reader = csv.DictReader(StringIO(csv_content))
+
+        if not set(csv_reader.fieldnames) >= {"Product Name", "Input Image URLs"}:
+            raise ValueError("CSV is missing required headers: Product Name, Input Image URLs")
+
+        csv_upload_doc = await create_document("csv_uploads", jsonable_encoder(csv_upload))
+        csv_upload_id = csv_upload_doc['_id']
 
         for row in csv_reader:
             product = Product(
