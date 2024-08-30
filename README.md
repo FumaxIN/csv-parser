@@ -6,6 +6,7 @@ Backend system for uploading CSV files, extracting information, processing data 
 * Extract, compress and store image
 * Google Cloud Storage integration for storing images
 * Utilized background tasks for processing data
+* Note: Program skips invalid image urls
 
 ### Design
 ![test1](https://github.com/user-attachments/assets/57f015a8-4db5-4b93-97e6-b8a29bc542de)
@@ -53,7 +54,7 @@ uvicorn main:app --reload
 
 ## Endpoints [Postman Workspace](https://app.getpostman.com/join-team?invite_code=6da6afe4d8b0111aca4d17eb08d01dfb&target_code=e2f5a86773d8d7880655fe7d8e2ae3ae)
 
-* **Upload a file**
+* **Upload a file** [example file](https://drive.google.com/file/d/1nHE2Embthg01wnj70vzBCVqvl-AC7Ahe/view?usp=sharing)
     ```
     POST: /api/v1/upload
     ```
