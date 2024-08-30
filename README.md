@@ -51,7 +51,7 @@ export universe_domain="googleapis.com"
 uvicorn main:app --reload
 ```
 
-## Endpoints
+## Endpoints [Postman Workspace](https://app.getpostman.com/join-team?invite_code=6da6afe4d8b0111aca4d17eb08d01dfb&target_code=e2f5a86773d8d7880655fe7d8e2ae3ae)
 
 * **Upload a file**
     ```
