@@ -28,6 +28,21 @@ source venv/bin/activate
   pip install -r requirements.txt
 ```
 
+* Environment variables
+```bash
+export type="service_account"
+export project_id="csv-parser-434011"
+export private_key_id= [private_key_id]
+export private_key=[private_key]
+export client_email="parser@csv-parser-434011.iam.gserviceaccount.com"
+export client_id="111475818929180942894"
+export auth_uri="https://accounts.google.com/o/oauth2/auth"
+export token_uri="https://oauth2.googleapis.com/token"
+export auth_provider_x509_cert_url="https://www.googleapis.com/oauth2/v1/certs"
+export client_x509_cert_url="https://www.googleapis.com/robot/v1/metadata/x509/parser%40csv-parser-434011.iam.gserviceaccount.com"
+export universe_domain="googleapis.com"
+```
+
 * Run server
 ```bash
 uvicorn main:app --reload
